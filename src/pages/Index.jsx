@@ -40,7 +40,7 @@ const Index = () => {
           <VStack spacing={4}>
             {images.length > 0 ? (
               images.map((url, index) => (
-                <Box key={index} boxSize={{ base: "100%", md: "sm" }} m="16px">
+                <Box key={index} boxSize={{ base: "100%", md: "md", lg: "lg" }} m="16px">
                   <Image src={url} alt={`SpaceX ${scope}`} />
                 </Box>
               ))
