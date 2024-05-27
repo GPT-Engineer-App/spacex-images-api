@@ -31,9 +31,9 @@ const Index = () => {
   const boxSize = useBreakpointValue({ base: "100%", md: "100%" });
 
   return (
-    <Container centerContent maxW="container.lg" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+    <Container centerContent maxW="container.lg" minHeight="100vh" display="flex" flexDirection="column" justifyContent="flex-start" alignItems="center" py={8}>
       <VStack spacing={4}>
-        <Text fontSize="3xl" fontWeight="bold">
+        <Text fontSize="3xl" fontWeight="bold" mt={4}>
           Beautiful SpaceX images
         </Text>
         <Text fontSize="2xl">SpaceX Image Gallery</Text>
