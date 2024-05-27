@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, VStack, Text, Select, Image, Spinner, Box } from "@chakra-ui/react";
+import { Container, VStack, Text, Select, Image, Spinner, Box, useBreakpointValue } from "@chakra-ui/react";
 import { FaRocket } from "react-icons/fa";
 
 const Index = () => {
@@ -25,6 +25,8 @@ const Index = () => {
     fetchImages();
   }, [scope]);
 
+  const boxSize = useBreakpointValue({ base: "100%", md: "100%" });
+
   return (
     <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
       <VStack spacing={4}>
@@ -40,7 +42,7 @@ const Index = () => {
           <VStack spacing={4}>
             {images.length > 0 ? (
               images.map((url, index) => (
-                <Box key={index} boxSize="100%" m="16px">
+                <Box key={index} boxSize={boxSize} m="16px">
                   <Image src={url} alt={`SpaceX ${scope}`} />
                 </Box>
               ))
