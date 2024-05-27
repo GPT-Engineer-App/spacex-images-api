@@ -13,8 +13,11 @@ const Index = () => {
       try {
         const response = await fetch(`https://api.spacexdata.com/v4/${scope}`);
         const data = await response.json();
-        const imageUrls = data.map((item) => item.flickr_images).flat();
-        setImages(imageUrls);
+        const imageDetails = data.map((item) => ({
+          url: item.flickr_images[0],
+          title: item.name || item.description || "No title available",
+        }));
+        setImages(imageDetails);
       } catch (error) {
         console.error("Error fetching images:", error);
       } finally {
@@ -41,9 +44,10 @@ const Index = () => {
         ) : (
           <VStack spacing={4}>
             {images.length > 0 ? (
-              images.map((url, index) => (
+              images.map((image, index) => (
                 <Box key={index} boxSize={boxSize} m="16px">
-                  <Image src={url} alt={`SpaceX ${scope}`} />
+                  <Image src={image.url} alt={`SpaceX ${scope}`} />
+                  <Text>{image.title}</Text>
                 </Box>
               ))
             ) : (
