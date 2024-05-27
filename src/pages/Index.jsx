@@ -33,6 +33,9 @@ const Index = () => {
   return (
     <Container centerContent maxW="container.lg" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
       <VStack spacing={4}>
+        <Text fontSize="3xl" fontWeight="bold">
+          Beautiful SpaceX images
+        </Text>
         <Text fontSize="2xl">SpaceX Image Gallery</Text>
         <Select value={scope} onChange={(e) => setScope(e.target.value)} placeholder="Select scope">
           <option value="rockets">Rockets</option>
