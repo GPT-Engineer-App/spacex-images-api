@@ -28,7 +28,7 @@ const Index = () => {
   const boxSize = useBreakpointValue({ base: "100%", md: "100%" });
 
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+    <Container centerContent maxW="container.lg" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
       <VStack spacing={4}>
         <Text fontSize="2xl">SpaceX Image Gallery</Text>
         <Select value={scope} onChange={(e) => setScope(e.target.value)} placeholder="Select scope">
