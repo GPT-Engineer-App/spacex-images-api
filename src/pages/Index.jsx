@@ -47,7 +47,9 @@ const Index = () => {
               images.map((image, index) => (
                 <Box key={index} boxSize={boxSize} m="16px">
                   <Image src={image.url} alt={`SpaceX ${scope}`} />
-                  <Text>{image.title}</Text>
+                  <Text fontWeight="bold" fontSize="1.8em">
+                    {image.title}
+                  </Text>
                 </Box>
               ))
             ) : (
